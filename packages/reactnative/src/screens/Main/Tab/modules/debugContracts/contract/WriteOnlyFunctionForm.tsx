@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { getFunctionInputKey, getInitialFormState, getParsedContractFunctionArgs } from './utilsContract';
 import useNetwork from '../../../../../../hooks/scaffold-eth/useNetwork';
 import useTargetNetwork from '../../../../../../hooks/scaffold-eth/useTargetNetwork';
-import useContractWrite from '../../../../../../hooks/scaffold-eth/useContractWrtie';
+import useContractWrite from '../../../../../../hooks/scaffold-eth/useContractWrite';
 import { BigNumber } from 'ethers';
 import { useToast } from 'react-native-toast-notifications';
 import { TransactionReceipt } from 'viem';
@@ -109,14 +109,14 @@ export default function WriteOnlyFunctionForm({
                     w={"20"}
                     py={"2"}
                     borderRadius={"3xl"}
-                    bgColor={COLORS.primary}
+                    bgColor={COLORS.primaryLight}
                     isLoading={isLoading}
                     isLoadingText='Send'
                     isDisabled={writeDisabled || isLoading}
                     _pressed={{ backgroundColor: 'rgba(39, 184, 88, 0.5)' }}
                     onPress={handleWrite}
                 >
-                    <Text fontSize={"md"} fontWeight={"medium"} color={"white"}>Send</Text>
+                    <Text fontSize={"md"} fontWeight={"medium"} color={COLORS.primary}>Send</Text>
                 </Button>
             </HStack>
         </View>

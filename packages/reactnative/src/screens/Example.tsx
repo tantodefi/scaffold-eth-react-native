@@ -79,7 +79,7 @@ export default function Home({ }: Props) {
     useEffect(() => {
         if (!isFocused) return
         getSnowmanBalance()
-    }, [account, isLoadingSnowmanContract, isFocused])
+    }, [account, network, isLoadingSnowmanContract, isFocused])
 
     if (!isFocused) return
     return (
@@ -91,8 +91,8 @@ export default function Home({ }: Props) {
             <Pressable
                 onPress={() => navigation.goBack()}
                 _pressed={{ opacity: 0.4 }}
-                top={15}
-                left={15}
+                mt={15}
+                ml={15}
             >
                 <Icon as={<Ionicons name="arrow-back-outline" />} size={1.3 * FONT_SIZE['xl']} color="black" />
             </Pressable>

@@ -33,8 +33,14 @@ git clone https://github.com/ValentineCodes/scaffold-eth-react-native.git
 
 cd scaffold-eth-react-native
 
-yarn i
+yarn install && yarn patch-ethers
+
+cd packages/reactnative
+
+npx pod-install
 ```
+
+Remember to run `yarn patch-ethers` to patch ethers after installing any package
 
 2. Connect your device to your computer via WIFI-HOTSPOT
 
@@ -58,16 +64,27 @@ yarn deploy
 
 6. Set the `ALCHEMY_KEY` and `LOCAL_PROVIDER` variables in `packages/reactnative/src/utils/constants.ts`
 
-7. [Connect your device](https://reactnative.dev/docs/running-on-device) to your computer via USB
+7. Connect your device via USB or Run an emulator
 
-8. Run android(`IOS support coming soon...`):
+8. Run server:
+
+```
+yarn start
+```
+
+9. Run on device:
+
+#### Android
 ```
 yarn android
 ```
 
-9. Import one of the accounts in your ganache workspace into your wallet to have funds for testing
+#### IOS
+```
+yarn ios
+```
 
-**Note:** Remember to run `yarn patch-ethers` to patch ethers after installing any package
+10. Import one of the accounts in your ganache workspace into your wallet to have funds for testing
 
 You can interact with your smart contract using the `Debug Contracts` tab. You can tweak the app config in `packages/reactnative/scaffold.config.ts`.
 
